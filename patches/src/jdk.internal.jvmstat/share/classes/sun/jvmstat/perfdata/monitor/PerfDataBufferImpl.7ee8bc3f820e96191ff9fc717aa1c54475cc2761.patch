@@ -1,0 +1,11 @@
+--- CleanJava/src/jdk.internal.jvmstat/share/classes/sun/jvmstat/perfdata/monitor/PerfDataBufferImpl.java	2020-10-31 12:22:54.000000000 +0100
++++ PerfDataBufferImpl.java	2020-10-31 20:48:57.000000000 +0100
+@@ -168,7 +168,7 @@
+         if (filename != null) {
+             File f = new File(filename);
+             try {
+-                aliasURL = f.toURL();
++                aliasURL = f.toURI().toURL();
+ 
+             } catch (MalformedURLException e) {
+                 throw new IllegalArgumentException(e);

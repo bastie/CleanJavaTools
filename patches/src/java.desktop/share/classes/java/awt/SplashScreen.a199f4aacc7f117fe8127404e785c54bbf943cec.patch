@@ -1,0 +1,14 @@
+--- CleanJava/src/java.desktop/share/classes/java/awt/SplashScreen.java	2020-10-31 12:22:52.000000000 +0100
++++ ./SplashScreen.java	2020-10-31 21:01:44.000000000 +0100
+@@ -223,9 +223,9 @@
+                     String jarName = _getImageJarName(splashPtr);
+                     if (fileName != null) {
+                         if (jarName != null) {
+-                            imageURL = new URL("jar:"+(new File(jarName).toURL().toString())+"!/"+fileName);
++                            imageURL = new URL("jar:"+(new File(jarName).toURI().toURL().toString())+"!/"+fileName);
+                         } else {
+-                            imageURL = new File(fileName).toURL();
++                            imageURL = new File(fileName).toURI().toURL();
+                         }
+                     }
+                 }
